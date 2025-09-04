@@ -12,7 +12,7 @@ export default function Home() {
 
   const [showDetail, setShowDetail] = useState(null); // modal p/ mensagem completa
 
-  const API = process.env.NEXT_PUBLIC_API_URL || 'https://bernardo-api-divine-silence-5344.fly.dev';
+  const API = process.env.NEXT_PUBLIC_API_URL || 'http://95.217.239.121/';
 
   useEffect(() => {
     const saved = localStorage.getItem('bs-user');
