@@ -12,7 +12,7 @@ export default function Home() {
 
   const [showDetail, setShowDetail] = useState(null); // modal p/ mensagem completa
 
-  const API = process.env.NEXT_PUBLIC_API_URL || 'http://95.217.239.121/';
+  const API = process.env.NEXT_PUBLIC_API_URL || 'http://95.217.239.121:4000/';
 
   useEffect(() => {
     const saved = localStorage.getItem('bs-user');
@@ -47,7 +47,7 @@ export default function Home() {
   const handleUpload = async () => {
     if (!file) return alert('Escolhe uma imagem');
     const form = new FormData();
-    form.append('image', file);
+    form.append('file', file);
     form.append('message', message);
     const res = await fetch(`${API}/photos?userId=${user.id}`, { method: 'POST', body: form });
     if (!res.ok) {
